@@ -1,6 +1,8 @@
 # Flutter Countries
 
 Query and retrieve country details by property type from a database of 250 countries.
+TODO: Add your license here.
+
 - Total Countries : 250 
 - Total States/Regions/Municipalities : 4,979 
 - Total Cities/Towns/Districts : 148,266

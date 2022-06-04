@@ -229,7 +229,9 @@ class Countries {
 /// Additionally, `toJson()` methods are provided for each `Country` class.
 class Cities {
   /// Returns a `List` of all `City`'s.
-  /// **NOTE** Retreiving all cities can become resource taxing.
+  /// **NOTE** Retreiving all cities and pushing to your Flutter app will probably
+  /// probably crash it, if not, bog it down! Narrow down yoeu results to preceisly
+  /// what data you required by using the other methods provided.
   static Future<List<City>> get all async => await _getCities();
 
   /// Returns a `List` of `City`'s containing a substring in its `id`.

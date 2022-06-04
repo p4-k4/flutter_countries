@@ -1,6 +1,6 @@
 name: flutter_countries 
-description: A new Flutter package project.
-version: 0.0.1
+description: Query and retrieve country details by property type from a database of 250 countries.
+version: 1.0.0
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
@@ -16,7 +16,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 flutter:
-    assets:
+  assets:
     - lib/assets/countries.json
     - lib/assets/cities.json
     - lib/assets/states.json

@@ -1,39 +1,93 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Flutter Countries
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+Query and retrieve country details by property type from a database of 250 countries.
+- Total Countries : 250 
+- Total States/Regions/Municipalities : 4,979 
+- Total Cities/Towns/Districts : 148,266
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+See the usage methods for available data.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+**Data source provided by:** [Countries States Cities Database](https://github.com/dr5hn/countries-states-cities-database)
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Works offline
+- Async queries by substring
+- Searches by substring, making fuzzy search possible
+- Matches and returns similar or exact results
 
-## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## Usage - `Countries`
 
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Retrieve a list of countries by property and substring.
 
 ```dart
-const like = 'sample';
+import 'package:country/country.dart';
+
+await Countries.all;
+await Countries.byCapital(capital);
+await Countries.byCoords(longitude, latitude);
+await Countries.byCurrencyName(currencyName);
+await Countries.byId(id);
+await Countries.byIso2(iso2);
+await Countries.byIso3(iso3);
+await Countries.byName(name);
+await Countries.byNative(native);
+await Countries.byNumericCode(numericCode);
+await Countries.byPhoneCode(phoneCode);
+await Countries.byRegion(region);
+await Countries.bySubRegion(subRegion);
+await Countries.byTimeZoneAbbreviation(timeZoneAbbreviation);
+await Countries.byTimeZoneGmtOffset(timeZoneGmtOffset);
+await Countries.byTimeZoneGmtOffsetName(gmtOffsetName):
+await Countries.byTimeZoneTzName(timeZoneTzName);
+await Countries.byTimeZoneZoneName(zoneName);
+await Countries.byTld(tld);
+await Countries.byTranslation(translation);
+```
+
+## Usage - `States`
+Retrieve a list of states by property and substring.
+
+```dart
+import 'package:country/country.dart';
+
+await States.all;
+await States.byCoords(longitude, latitude);
+await States.byCountryCode(countryCode);
+await States.byCountryId(countryId);
+await States.byCountryName(countryName);
+await States.byId(id);
+await States.byLatitude(latitude);
+await States.byLongitude(longitude);
+await States.byName(name);
+await States.byStateCode(stateCode);
+await States.byType(type);
+```
+
+## Usage - `Cities`
+Retrieve a list of cities by property and substring.
+
+```dart
+import 'package:country/country.dart';
+
+  await Cities.all;
+  await Cities.byCoords(longitude, latitude);
+  await Cities.byCountryCode(countryCode);
+  await Cities.byCountryName(countryName);
+  await Cities.byId(id);
+  await Cities.byLatitude(latitude);
+  await Cities.byLongitude(longitude);
+  await Cities.byName(name);
+  await Cities.byStateCode(stateCode);
+  await Cities.byStateId(stateId);
+  await Cities.byStateName(stateName);
+  await Cities.byWikiDataId(wikiDataId);
+  await Cities.bycountryID(countryId);
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Improvements to be made to queries.
+
+[Paurini Wiringi](https://github.com/p4-k4)

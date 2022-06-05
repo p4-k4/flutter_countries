@@ -9,9 +9,11 @@ TODO: Add your license here.
 
 See the usage methods for available data.
 
-**NOTE** Currently doesn't support running queries in isolates which is a restriction dervied from `rootBundle.loadString()` of which this package mainly depends on. This will be addressed in near future versions.
+**NOTE** The data sets are retreived using `rootBundle.loadString()` in the main isolate, prior to json -> object conversion.
 
-[Discussion/issue](https://github.com/flutter/flutter/issues/96895)
+However, json -> object conversion happens inside a new isolate. If you experience any UI jank when making queries (except when using `.all` getters), you can try running the query outside of the main isolate.
+
+Reference: [Running `rootBundle.loadString()` outside of main isolate](https://github.com/flutter/flutter/issues/96895)
 
 **Data source provided by:** [Countries States Cities Database](https://github.com/dr5hn/countries-states-cities-database)
 

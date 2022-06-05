@@ -18,6 +18,15 @@ const _jsonPathStates = 'packages/flutter_countries/lib/assets/states.json';
 const _jsonPathCountries =
     'packages/flutter_countries/lib/assets/countries.json';
 
+List<Country> _getCountryObjects(List data) =>
+    data.map((e) => Country.fromJson(e)).toList();
+
+List<City> _getCityObjects(List data) =>
+    data.map((e) => City.fromJson(e)).toList();
+
+List<State> _getStateObjects(List data) =>
+    data.map((e) => State.fromJson(e)).toList();
+
 Future<List> _getJson(String jsonFilePath) async {
   final string = await rootBundle.loadString(jsonFilePath);
   return jsonDecode(string) as List;
@@ -25,17 +34,17 @@ Future<List> _getJson(String jsonFilePath) async {
 
 Future<List<Country>> _getCountries() async {
   final data = await _getJson(_jsonPathCountries);
-  return data.map((e) => Country.fromJson(e)).toList();
+  return compute(_getCountryObjects, data);
 }
 
 Future<List<City>> _getCities() async {
   final data = await _getJson(_jsonPathCities);
-  return data.map((e) => City.fromJson(e)).toList();
+  return compute(_getCityObjects, data);
 }
 
 Future<List<State>> _getStates() async {
   final data = await _getJson(_jsonPathStates);
-  return data.map((e) => State.fromJson(e)).toList();
+  return compute(_getStateObjects, data);
 }
 
 List<T> _query<T>(

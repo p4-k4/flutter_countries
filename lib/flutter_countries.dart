@@ -1,6 +1,8 @@
 library flutter_countries;
 
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart' hide State;
 import 'package:flutter/services.dart';
 
 import 'models/city.dart';
@@ -44,6 +46,13 @@ List<T> _query<T>(
 
 /// A class of static methods to retrieve a `Country` by its properties.
 /// Additionally, `toJson()` methods are provided for each `Country` class.
+///
+/// **NOTE**: To reduce performance cost on a query, it's advised to run
+/// any considerablly large queries in an isolate and narrow your results
+/// down as much as possible before it's passed back to the main isolate.
+///
+/// Exceptionally arge query results *WILL* produce UI jank regardless if it's run in
+/// an isolate or not.
 class Countries {
   static Future<List<Country>> get all async => await _getCountries();
 
@@ -227,6 +236,13 @@ class Countries {
 
 /// A class of static methods that retrieve a `City` by its properties.
 /// Additionally, `toJson()` methods are provided for each `Country` class.
+///
+/// **NOTE**: To reduce performance cost on a query, it's advised to run
+/// any considerablly large queries in an isolate and narrow your results
+/// down as much as possible before it's passed back to the main isolate.
+///
+/// Exceptionally arge query results *WILL* produce UI jank regardless if it's run in
+/// an isolate or not.
 class Cities {
   /// Returns a `List` of all `City`'s.
   /// **NOTE** Retreiving all cities and pushing to your Flutter app will probably
@@ -320,6 +336,13 @@ class Cities {
 
 /// A class of static methods to retrieve a `State` by its properties.
 /// Additionally, `toJson()` methods are provided for each `Country` class.
+///
+/// **NOTE**: To reduce performance cost on a query, it's advised to run
+/// any considerablly large queries in an isolate and narrow your results
+/// down as much as possible before it's passed back to the main isolate.
+///
+/// Exceptionally arge query results *WILL* produce UI jank regardless if it's run in
+/// an isolate or not.
 class States {
   /// Returns a `List` of all `State`'s.
   static Future<List<State>> get all async => await _getStates();

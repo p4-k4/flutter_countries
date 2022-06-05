@@ -9,6 +9,10 @@ TODO: Add your license here.
 
 See the usage methods for available data.
 
+**NOTE** Currently doesn't support running queries in isolates which is a restriction dervied from `rootBundle.loadString()` of which this package mainly depends on. This will be addressed in near future versions.
+
+[Discussion/issue](https://github.com/flutter/flutter/issues/96895)
+
 **Data source provided by:** [Countries States Cities Database](https://github.com/dr5hn/countries-states-cities-database)
 
 ## Features

@@ -1,6 +1,6 @@
 name: flutter_countries 
 description: Query and retrieve country details by property type from a database of 250 countries.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/p4-k4/flutter_countries
 
 environment:
